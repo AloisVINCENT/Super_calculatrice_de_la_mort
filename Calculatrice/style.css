@@ -5,10 +5,6 @@ body{
     grid-template-rows:
                         125px
                         75px
-                        75px
-                        75px
-                        75px
-                        75px
 ;
 
 font-size: larger;
@@ -29,7 +25,9 @@ p{
 
 .result{
     background-color: black;
-    grid-column-end: span 4;
+    /* C'est robuste */
+    grid-column-start: 1;
+    grid-column-end: -1;
     color: white;
     text-align: right;
 }
@@ -45,10 +43,14 @@ p{
     text-align: center;
 }   
 
-div:hover{
+.number>div:hover{
     background-color: lightgray;
 }
 
-div.result:hover{
+.operator>div:hover{
+    background-color: lightgray;
+}
+
+.result:hover{
     background-color: black;
 }
