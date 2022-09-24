@@ -1,35 +1,64 @@
 body{
+    /* Grid */
     display: grid;
     grid-gap: 2px;
-    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-columns: repeat(4, 120px);
     grid-template-rows:
                         125px
-                        75px
-;
+                        repeat(5, 75px);
+grid-auto-flow: row dense;
 
+/* Appearance */
 font-size: larger;
 font-family: Fira Code;
 background-color: #232931
 }
 
-.span1{
-    background-color: white;
-    grid-column-end: span 1;
-    text-align: center;
-}
-
-p{
-    position: relative;
-    top: 10%;
-}
-
 .result{
-    background-color: black;
     /* C'est robuste */
     grid-column-start: 1;
     grid-column-end: -1;
+    grid-row-start: 1;
+
+    /* C'est joli */
     color: white;
     text-align: right;
+    background-color: black;
+}
+
+.operators{
+    grid-column-end: -1;
+    background-color: white;
+    text-align: center;
+}
+
+.numbers{
+    background-color: white;
+    text-align: center;
+}
+
+.autre{
+    background-color: white;
+    text-align: center;
+}
+
+#AC{
+    grid-column-end: span 2;
+}
+
+#dot{
+    grid-column-start: 0;
+}
+
+#equal{
+    grid-column-start: span 2;
+    grid-column-end: -1;
+}
+
+/* Positionnement texte */
+p{
+    position: relative;
+    top: 10%;
 }
 
 .result>p{
@@ -37,20 +66,13 @@ p{
     top: 65%;
 }
 
-.span2{
-    background-color: white;
-    grid-column-end: span 2;
-    text-align: center;
-}   
-
-.number>div:hover{
+/* Surbrillance */
+div:hover{
     background-color: lightgray;
 }
-
-.operator>div:hover{
-    background-color: lightgray;
-}
-
 .result:hover{
     background-color: black;
+}
+div.autre:hover{
+    background-color: lightgray!important;
 }
